@@ -88,6 +88,7 @@ const html = exportHtml(story);
 ```bash
 npm run build      # standalone bundle + dist (ESM + .d.ts)
 npm test           # headless self-check (engine unit tests)
+npm run test:e2e   # headless-browser check: exported .html plays offline, zero network requests
 npm run typecheck  # strict TypeScript, no `any`
 ```
 

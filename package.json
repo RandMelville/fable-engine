@@ -41,10 +41,13 @@
     "build:standalone": "node scripts/build-standalone.mjs",
     "build": "npm run build:standalone && esbuild src/index.ts --bundle --format=esm --outfile=dist/index.js && tsc -p tsconfig.build.json --emitDeclarationOnly",
     "test": "node scripts/run-selfcheck.mjs",
+    "test:e2e": "node test/e2e.mjs",
+    "test:all": "npm test && npm run test:e2e",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "esbuild": "^0.21.0",
+    "playwright": "^1.61.1",
     "typescript": "^5.4.0"
   }
 }
