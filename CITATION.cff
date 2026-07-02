@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "fable-engine: a framework-free engine for interactive narratives with offline export and CSTA mapping"
+abstract: >-
+  A tiny, dependency-free TypeScript engine for interactive branching narratives.
+  It plays stories in a Canvas 2D player, exports each story as a single self-contained
+  offline HTML file (file over app), and deterministically maps narrative structure onto
+  the four CSTA computational-thinking pillars. Developed within the RemidiAção platform
+  (PPGIE/UFRGS) to operationalize the remediation of written texts into interactive digital
+  narratives.
+type: software
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/RandMelville/fable-engine"
+keywords:
+  - interactive narrative
+  - narrative engine
+  - computational thinking
+  - CSTA
+  - educational technology
+  - file over app
+authors:
+  # Randerson — autoria técnica (desenho e implementação do motor)
+  - family-names: "Rebouças"
+    given-names: "Randerson Oliveira Melville"
+    affiliation: "Programa de Pós-Graduação em Informática na Educação (PPGIE), Universidade Federal do Rio Grande do Sul (UFRGS)"
+    orcid: "https://orcid.org/0009-0005-3056-5074"
+  # Marcelo — autoria pedagógica (concepção do CRA e do desenho pedagógico que o motor operacionaliza)
+  - family-names: "Foohs"
+    given-names: "Marcelo Magalhães"
+    affiliation: "Programa de Pós-Graduação em Informática na Educação (PPGIE), Universidade Federal do Rio Grande do Sul (UFRGS)"
+    orcid: "https://orcid.org/0000-0002-4735-0732"

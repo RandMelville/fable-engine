@@ -1,0 +1,27 @@
+{
+  "title": "fable-engine: a framework-free engine for interactive narratives with offline export and CSTA mapping",
+  "description": "A tiny, dependency-free TypeScript engine for interactive branching narratives. It plays stories in a Canvas 2D player, exports each story as a single self-contained offline HTML file (file over app), and deterministically maps narrative structure onto the four CSTA computational-thinking pillars. Developed within the RemidiAção platform (PPGIE/UFRGS) to operationalize the remediation of written texts into interactive digital narratives.",
+  "upload_type": "software",
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": [
+    "interactive narrative",
+    "narrative engine",
+    "computational thinking",
+    "CSTA",
+    "educational technology",
+    "file over app"
+  ],
+  "creators": [
+    {
+      "name": "Rebouças, Randerson Oliveira Melville",
+      "affiliation": "PPGIE, Universidade Federal do Rio Grande do Sul (UFRGS)",
+      "orcid": "0009-0005-3056-5074"
+    },
+    {
+      "name": "Foohs, Marcelo Magalhães",
+      "affiliation": "PPGIE, Universidade Federal do Rio Grande do Sul (UFRGS)",
+      "orcid": "0000-0002-4735-0732"
+    }
+  ]
+}

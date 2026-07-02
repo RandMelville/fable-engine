@@ -1,0 +1,50 @@
+{
+  "name": "fable-engine",
+  "version": "0.1.0",
+  "description": "A tiny, framework-free TypeScript engine for interactive narratives, with a Canvas 2D player and self-contained HTML export.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Randerson Oliveira Melville Rebouças",
+  "contributors": [
+    "Marcelo Magalhães Foohs (pedagogical design — Active Remediation Cycle)"
+  ],
+  "homepage": "https://github.com/RandMelville/fable-engine#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RandMelville/fable-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RandMelville/fable-engine/issues"
+  },
+  "keywords": [
+    "interactive-narrative",
+    "narrative-engine",
+    "computational-thinking",
+    "csta",
+    "educational-technology",
+    "canvas",
+    "file-over-app"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:standalone": "node scripts/build-standalone.mjs",
+    "build": "npm run build:standalone && esbuild src/index.ts --bundle --format=esm --outfile=dist/index.js && tsc -p tsconfig.build.json --emitDeclarationOnly",
+    "test": "node scripts/run-selfcheck.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.0",
+    "typescript": "^5.4.0"
+  }
+}
