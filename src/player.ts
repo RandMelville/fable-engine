@@ -417,10 +417,12 @@ export class Player {
   private renderStructure(): void {
     const s = summarizeAlgorithmicStructure(this.story);
     this.structurePanel.innerHTML = "";
+    const plural = (n: number, one: string, many: string): string =>
+      `${n} ${n === 1 ? one : many}`;
     const items = [
-      `${s.scenes} scenes`,
-      `${s.variables} variables`,
-      `${s.branches} decisions`,
+      plural(s.scenes, "scene", "scenes"),
+      plural(s.variables, "variable", "variables"),
+      plural(s.branches, "decision", "decisions"),
     ];
     const label = this.options.labels?.structure ?? "Structure:";
     this.structurePanel.textContent = `${label}  ${items.join("   ·   ")}`;
