@@ -21,7 +21,7 @@ export {
   evaluateConditional,
   applyModifier,
   nextSceneByConditional,
-  countCSTAPillars,
+  summarizeAlgorithmicStructure,
   flatten,
 } from "./engine";
 

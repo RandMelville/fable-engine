@@ -11,7 +11,7 @@ import { Player } from "./player";
 declare global {
   interface Window {
     __STORY__?: Story;
-    __LABELS__?: { end?: string; playAgain?: string; thought?: string };
+    __LABELS__?: { end?: string; playAgain?: string; structure?: string };
   }
 }
 

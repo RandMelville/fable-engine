@@ -14,7 +14,7 @@
 
 import {
   applyModifier,
-  countCSTAPillars,
+  summarizeAlgorithmicStructure,
   evaluateConditional,
   flatten,
   initialState,
@@ -42,7 +42,7 @@ export interface PlayerOptions {
   /** Called on reaching an ending (a scene with no choices and no conditional). */
   onComplete?: (path: string[], finalState: State) => void;
   /** UI labels (i18n). */
-  labels?: { end?: string; playAgain?: string; thought?: string };
+  labels?: { end?: string; playAgain?: string; structure?: string };
 }
 
 const WIDTH = 720;
@@ -56,7 +56,7 @@ export class Player {
   private canvas: HTMLCanvasElement;
   private ctx: CanvasRenderingContext2D;
   private choicesPanel: HTMLElement;
-  private cstaPanel: HTMLElement;
+  private structurePanel: HTMLElement;
 
   private story: Story;
   private state: State;
@@ -92,14 +92,14 @@ export class Player {
 
     this.choicesPanel = document.createElement("div");
     this.choicesPanel.className = "choices";
-    this.cstaPanel = document.createElement("div");
-    this.cstaPanel.className = "csta";
+    this.structurePanel = document.createElement("div");
+    this.structurePanel.className = "structure";
 
     container.appendChild(this.canvas);
     container.appendChild(this.choicesPanel);
-    container.appendChild(this.cstaPanel);
+    container.appendChild(this.structurePanel);
 
-    this.renderCSTA();
+    this.renderStructure();
     this.goToScene(story.initialSceneId);
     this.rafId = requestAnimationFrame(this.loop);
   }
@@ -414,16 +414,15 @@ export class Player {
     this.options.onComplete?.([...this.path], { ...this.state });
   }
 
-  private renderCSTA(): void {
-    const c = countCSTAPillars(this.story);
-    this.cstaPanel.innerHTML = "";
+  private renderStructure(): void {
+    const s = summarizeAlgorithmicStructure(this.story);
+    this.structurePanel.innerHTML = "";
     const items = [
-      `🧩 ${c.decomposition}`,
-      `📦 ${c.abstraction}`,
-      `🔀 ${c.algorithmicThinking}`,
-      `🔁 ${c.patternRecognition}`,
+      `${s.scenes} scenes`,
+      `${s.variables} variables`,
+      `${s.branches} decisions`,
     ];
-    const label = this.options.labels?.thought ?? "Computational thinking:";
-    this.cstaPanel.textContent = `${label}  ${items.join("   ·   ")}`;
+    const label = this.options.labels?.structure ?? "Structure:";
+    this.structurePanel.textContent = `${label}  ${items.join("   ·   ")}`;
   }
 }

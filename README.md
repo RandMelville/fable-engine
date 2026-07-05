@@ -7,9 +7,10 @@ You describe a story as data (scenes, state variables, choices, conditionals); t
 it in the browser and can export it as a single `.html` file that runs anywhere, offline,
 forever — no server, no network requests.
 
-It was built to make **computational thinking visible**: the same structure a student creates to
-tell a branching story maps deterministically onto the four CSTA pillars (decomposition,
-abstraction, algorithmic thinking, pattern recognition).
+It was built to make the **algorithm the author builds visible and executable**: the story is a
+state machine the player runs, and `summarizeAlgorithmicStructure` gives a deterministic account of
+the computational constructs in it (scenes, variables, branches, modifiers) — a description of what
+was built, not a score of cognitive faculties.
 
 ## Install
 
@@ -20,7 +21,7 @@ npm install fable-engine
 ## Quick start
 
 ```ts
-import { Player, exportHtml, countCSTAPillars, type Story } from "fable-engine";
+import { Player, exportHtml, summarizeAlgorithmicStructure, type Story } from "fable-engine";
 
 const story: Story = {
   formatVersion: 1,
@@ -50,9 +51,9 @@ const story: Story = {
 // Play it on the page
 new Player(document.getElementById("stage")!, story);
 
-// See the computational-thinking profile of this story
-countCSTAPillars(story);
-// → { decomposition: 2, abstraction: 1, algorithmicThinking: 2, patternRecognition: 1 }
+// See a deterministic summary of this story's computational structure
+summarizeAlgorithmicStructure(story);
+// → { scenes: 2, variables: 1, branches: 2, modifiers: 1 }
 
 // Or export a self-contained, offline .html
 const html = exportHtml(story);
@@ -70,8 +71,9 @@ const html = exportHtml(story);
   `Conditional` — nothing else to learn that isn't also a decision about the story.
 - **Instrumentable.** The player tracks the path taken and the final state, so the narrative
   itself becomes research data.
-- **Deterministic CSTA mapping.** `countCSTAPillars` derives the four pillars from structure by
-  counting — reproducible, no AI, no inference.
+- **Deterministic structural summary.** `summarizeAlgorithmicStructure` describes the computational
+  constructs in a story (scenes, variables, branches, modifiers) by counting — reproducible, no AI,
+  no inference. It describes what the author built, not a cognitive score.
 
 ## Public API
 
@@ -81,7 +83,7 @@ const html = exportHtml(story);
 | `Player(container, story, options?)` | Canvas 2D player. |
 | `exportHtml(story, options?)`, `downloadHtml(name, html)` | Self-contained offline export. |
 | `initialState`, `evaluateConditional`, `applyModifier`, `nextSceneByConditional`, `flatten` | Pure engine functions (fully unit-tested). |
-| `countCSTAPillars(story)` | Deterministic CSTA profile. |
+| `summarizeAlgorithmicStructure(story)` | Deterministic summary of a story's computational structure. |
 
 ## Develop
 
@@ -107,6 +109,6 @@ If you use fable-engine in academic work, please cite it — see [`CITATION.cff`
 O `fable-engine` nasceu na plataforma educacional **RemidiAção** (PPGIE/UFRGS), onde
 operacionaliza a **remidiação** de textos escritos em narrativas digitais interativas — parte do
 **Ciclo de Remidiação Ativa (CRA)**. Aqui ele é publicado como biblioteca genérica e reutilizável;
-o vocabulário de autoria (cena, variável, escolha, condicional) e o mapeamento CSTA são os mesmos,
-com a API em inglês para maior alcance. A API pública é `Story` (a "fábula") — você a descreve
+o vocabulário de autoria (cena, variável, escolha, condicional) e o resumo determinístico da
+estrutura são os mesmos, com a API em inglês para maior alcance. A API pública é `Story` (a "fábula") — você a descreve
 como dado e o motor a executa e exporta offline.

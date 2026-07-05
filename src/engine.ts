@@ -2,7 +2,7 @@
  * Data model and core logic of the story engine.
  *
  * Framework-free core: the data-model types, the critical logic (conditional
- * evaluation, modifiers, CSTA counting) and the "flattening" of a scene's
+ * evaluation, modifiers, structural summary) and the "flattening" of a scene's
  * animation program. No external dependencies — this is what makes the
  * self-contained "file over app" export possible.
  */
@@ -159,30 +159,32 @@ export function nextSceneByConditional(cond: Conditional, state: State): string 
 }
 
 /**
- * Counts the four CSTA pillars — "computational thinking made visible".
- * decomposition = scenes · abstraction = variables ·
- * algorithmicThinking = choices + conditionals · patternRecognition = modifiers.
+ * Summarizes the structural constructs the author built into a story:
+ * scenes (how the story is decomposed), variables (state), branches
+ * (choices + conditionals) and modifiers (state effects). It describes what is
+ * implemented in the narrative — a deterministic account of computational
+ * constructs, not a score of the author's cognitive faculties.
  */
-export function countCSTAPillars(story: Story): {
-  decomposition: number;
-  abstraction: number;
-  algorithmicThinking: number;
-  patternRecognition: number;
+export function summarizeAlgorithmicStructure(story: Story): {
+  scenes: number;
+  variables: number;
+  branches: number;
+  modifiers: number;
 } {
-  let algorithmicThinking = 0;
-  let patternRecognition = 0;
+  let branches = 0;
+  let modifiers = 0;
   for (const scene of story.scenes) {
-    if (scene.conditional) algorithmicThinking += 1;
+    if (scene.conditional) branches += 1;
     for (const choice of scene.choices ?? []) {
-      algorithmicThinking += 1;
-      patternRecognition += choice.modifiers.length;
+      branches += 1;
+      modifiers += choice.modifiers.length;
     }
   }
   return {
-    decomposition: story.scenes.length,
-    abstraction: story.variables.length,
-    algorithmicThinking,
-    patternRecognition,
+    scenes: story.scenes.length,
+    variables: story.variables.length,
+    branches,
+    modifiers,
   };
 }
 

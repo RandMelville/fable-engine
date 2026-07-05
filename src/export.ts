@@ -11,13 +11,13 @@ import { standaloneBundle } from "./generated/standaloneBundle";
 export interface ExportLabels {
   end: string;
   playAgain: string;
-  thought: string;
+  structure: string;
 }
 
 const DEFAULT_LABELS: ExportLabels = {
   end: "The End 🌱",
   playAgain: "↺ Play again",
-  thought: "Computational thinking:",
+  structure: "Structure:",
 };
 
 /** Escapes ``</script>`` so inline JSON/JS does not close the tag. */
@@ -55,7 +55,7 @@ export function exportHtml(
   .choice-btn:hover { background: #f5f3ff; }
   .choice-btn.secondary { border-color: #a1a1aa; color: #52525b; }
   .ending { font-size: 18px; font-weight: 700; color: #5b21b6; }
-  .csta { margin-top: 14px; font: 600 12px ui-monospace, monospace; color: #10b981;
+  .structure { margin-top: 14px; font: 600 12px ui-monospace, monospace; color: #10b981;
     background: #ecfdf5; border-radius: 10px; padding: 8px 12px; }
   footer { margin-top: 12px; text-align: center; color: #a1a1aa; font-size: 11px; }
 </style>

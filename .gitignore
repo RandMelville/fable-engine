@@ -1,2 +1,6 @@
 node_modules/
 dist/
+
+# Documentos internos de registro/autoria (INPI, CPFs, taxas, política de PI) — não publicar
+registro/
+.DS_Store

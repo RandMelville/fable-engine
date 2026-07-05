@@ -5,7 +5,7 @@
 
 import {
   applyModifier,
-  countCSTAPillars,
+  summarizeAlgorithmicStructure,
   evaluateConditional,
   flatten,
   initialState,
@@ -63,15 +63,15 @@ check(
   steps.every((s) => ["appear", "speak", "move", "wait"].includes(s.type)),
 );
 
-// --- countCSTAPillars ---
-const c = countCSTAPillars(foxAndWolf);
-check("CSTA decomposition = 4 scenes", c.decomposition === 4);
-check("CSTA abstraction = 1 variable", c.abstraction === 1);
+// --- summarizeAlgorithmicStructure ---
+const c = summarizeAlgorithmicStructure(foxAndWolf);
+check("structure: scenes = 4", c.scenes === 4);
+check("structure: variables = 1", c.variables === 1);
 check(
-  "CSTA algorithmicThinking = 2 choices + 1 conditional = 3",
-  c.algorithmicThinking === 3,
+  "structure: branches = 2 choices + 1 conditional = 3",
+  c.branches === 3,
 );
-check("CSTA patternRecognition = 2 modifiers", c.patternRecognition === 2);
+check("structure: modifiers = 2", c.modifiers === 2);
 
 // --- symbolic playthrough of both branches ---
 function run(courageChoice: number): string {
