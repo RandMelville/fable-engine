@@ -39,7 +39,7 @@ export interface Character {
   };
 }
 
-/** A scene's animation program. `repeat` is the loop (algorithmic thinking). */
+/** A scene's animation program. `repeat` replays visual movement; it is not counted as an authored loop. */
 export type Action =
   | { type: "appear"; characterId: string }
   | {
