@@ -1,11 +1,11 @@
 # fable-engine
 
-A tiny, framework-free TypeScript engine for **interactive narratives** — with a Canvas 2D
+A tiny, framework-free TypeScript engine for **interactive narratives**, with a Canvas 2D
 player and **self-contained, offline HTML export**. Zero runtime dependencies.
 
 You describe a story as data (scenes, state variables, choices, conditionals); the engine plays
 it in the browser and can export it as a single `.html` file that runs anywhere, offline,
-forever — no server, no network requests.
+forever, with no server and no network requests.
 
 It was built to make the **algorithm the author builds observable and executable**: the story is a
 state machine the player runs, and `summarizeAlgorithmicStructure` gives a deterministic account of
@@ -65,14 +65,14 @@ const html = exportHtml(story);
 ## Why it exists
 
 - **Offline & portable (*file over app*).** `exportHtml` inlines the story JSON, the player
-  runtime, and the CSS into one HTML file with **no external references** — it opens offline in
+  runtime, and the CSS into one HTML file with **no external references**; it opens offline in
   any browser, with no platform behind it.
 - **A small, honest vocabulary.** The whole surface is `Scene`, `Variable`, `Choice`,
-  `Conditional` — nothing else to learn that isn't also a decision about the story.
+  `Conditional`, and nothing else to learn that isn't also a decision about the story.
 - **Instrumentable.** The player tracks the path taken and the final state, so the narrative
   itself becomes research data.
 - **Deterministic structural summary.** `summarizeAlgorithmicStructure` describes the computational
-  constructs in a story (scenes, variables, branches, modifiers) by counting — reproducible, no AI,
+  constructs in a story (scenes, variables, branches, modifiers) by counting: reproducible, no AI,
   no inference. It describes what the author built, not a cognitive score.
 
 ## Public API
@@ -100,15 +100,15 @@ npm run typecheck  # strict TypeScript, no `any`
 
 ## Citing
 
-If you use fable-engine in academic work, please cite it — see [`CITATION.cff`](./CITATION.cff).
+If you use fable-engine in academic work, please cite it (see [`CITATION.cff`](./CITATION.cff)).
 
 ---
 
 ### Contexto (pt-BR)
 
 O `fable-engine` nasceu na plataforma educacional **RemidiAção** (PPGIE/UFRGS), onde
-operacionaliza a **remidiação** de textos escritos em narrativas digitais interativas — parte do
+operacionaliza a **remidiação** de textos escritos em narrativas digitais interativas, parte do
 **Ciclo de Remidiação Ativa (CRA)**. Aqui ele é publicado como biblioteca genérica e reutilizável;
 o vocabulário de autoria (cena, variável, escolha, condicional) e o resumo determinístico da
-estrutura são os mesmos, com a API em inglês para maior alcance. A API pública é `Story` (a "fábula") — você a descreve
+estrutura são os mesmos, com a API em inglês para maior alcance. A API pública é `Story` (a "fábula"); você a descreve
 como dado e o motor a executa e exporta offline.
