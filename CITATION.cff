@@ -11,6 +11,7 @@ abstract: >-
   narratives.
 type: software
 version: 1.0.0
+doi: "10.5281/zenodo.21302155"
 license: MIT
 repository-code: "https://github.com/RandMelville/fable-engine"
 keywords:

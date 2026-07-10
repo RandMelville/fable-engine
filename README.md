@@ -1,5 +1,7 @@
 # fable-engine
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21302155.svg)](https://doi.org/10.5281/zenodo.21302155)
+
 A tiny, framework-free TypeScript engine for **interactive narratives**, with a Canvas 2D
 player and **self-contained, offline HTML export**. Zero runtime dependencies.
 
