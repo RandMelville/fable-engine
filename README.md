@@ -7,10 +7,10 @@ You describe a story as data (scenes, state variables, choices, conditionals); t
 it in the browser and can export it as a single `.html` file that runs anywhere, offline,
 forever — no server, no network requests.
 
-It was built to make the **algorithm the author builds visible and executable**: the story is a
+It was built to make the **algorithm the author builds observable and executable**: the story is a
 state machine the player runs, and `summarizeAlgorithmicStructure` gives a deterministic account of
-the computational constructs in it (scenes, variables, branches, modifiers) — a description of what
-was built, not a score of cognitive faculties.
+the computational constructs in it (scenes, variables, branches, modifiers), a description of what
+was built as evidence for interpreting computational thinking, not a score of cognitive faculties.
 
 ## Install
 

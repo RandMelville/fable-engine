@@ -5,10 +5,10 @@ import type { Story } from "../src/engine";
  *
  * Deliberately exercises every engine feature:
  *  - appear/speak/move    (sprite, say, animation)
- *  - repeat               (loop / algorithmic thinking)
- *  - variable `courage`   (abstraction / state)
- *  - choice with modifier (interactive branch + pattern recognition)
- *  - conditional          (algorithmic thinking / state-based branch)
+ *  - repeat               (replays visual movement, an animation step, not an authored loop)
+ *  - variable `courage`   (declared state)
+ *  - choice with modifier (interactive branch + state effect)
+ *  - conditional          (state-based branch)
  */
 export const foxAndWolf: Story = {
   formatVersion: 1,
