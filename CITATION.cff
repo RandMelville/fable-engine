@@ -10,7 +10,7 @@ abstract: >-
   (PPGIE/UFRGS) to operationalize the remediation of written texts into interactive digital
   narratives.
 type: software
-version: 0.2.0
+version: 1.0.0
 license: MIT
 repository-code: "https://github.com/RandMelville/fable-engine"
 keywords:

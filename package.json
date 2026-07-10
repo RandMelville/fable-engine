@@ -1,6 +1,6 @@
 {
   "name": "fable-engine",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "A tiny, framework-free TypeScript engine for interactive narratives, with a Canvas 2D player and self-contained HTML export.",
   "type": "module",
   "license": "MIT",
