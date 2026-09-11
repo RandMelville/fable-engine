@@ -14,6 +14,13 @@ version: 1.0.0
 doi: "10.5281/zenodo.21302155"
 license: MIT
 repository-code: "https://github.com/RandMelville/fable-engine"
+identifiers:
+  - type: other
+    value: "INPI BR512026007059-7"
+    description: >-
+      Registro de Programa de Computador (Brazilian software registration, Lei 9.609/98)
+      issued by INPI on 2026-09-01 for the v1.0.0 snapshot (commit b4eeb77). Holder: UFRGS.
+      Certificate and registered source listing in docs/inpi/.
 keywords:
   - interactive narrative
   - narrative engine
